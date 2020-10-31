@@ -12,7 +12,7 @@ Then(/^I should see the Logo is displayed$/, () => {
 });
 
 Then(/^I should see a message saying (.*)$/, (message) => {
-    expect(CreatePage.Notice).toBeExisting();
+    expect(CreatePage.Notice).toHaveTextContaining(message);
 });
 
 Then(/^I should see the employee (.*)$/, (employeeExpected) => {
