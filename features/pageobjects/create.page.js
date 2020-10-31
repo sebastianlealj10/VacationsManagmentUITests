@@ -15,7 +15,7 @@ class CreatePage extends Page {
     get selectMonth () { return $('#employee_start_working_on_2i') } 
     get selectDay () { return $('#employee_start_working_on_3i') }
 
-    create(firstName, lastname, email, identification, leadername) {
+    createUser(firstName = 'James', lastname = 'Smith', email = 'James.Smith@mailinator.com', identification = '1234567890', leadername = 'Sebastian Leal') {
         this.inputFirstName.setValue(firstName);
         this.inputLastName.setValue(lastname);
         this.inputEmail.setValue(email);
