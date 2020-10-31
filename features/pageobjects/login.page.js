@@ -1,31 +1,21 @@
 import Page from './page';
+import getPassword from '../../helpers/credentials.helper';
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () { return $('#username') }
-    get inputPassword () { return $('#password') }
-    get btnSubmit () { return $('button[type="submit"]') }
 
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    login (username, password) {
+    get inputUsername () { return $('#user_email') }
+    get inputPassword () { return $('#user_password') }
+    get btnSubmit () { return $('input[type="submit"]') }
+
+    login (username = "gap-automation-test@mailinator.com") {
+        const password = getPassword(username);
         this.inputUsername.setValue(username);
         this.inputPassword.setValue(password);
         this.btnSubmit.click(); 
     }
 
-    /**
-     * overwrite specifc options to adapt it to page object
-     */
     open () {
-        return super.open('login');
+        return super.open('users/sign_in');
     }
 }
 

@@ -1,12 +1,12 @@
-Feature: The Internet Guinea Pig Website
+Feature: The admins is able to log into the site
 
-  Scenario Outline: As a user, I can log into the secure area
+  Scenario Outline: As a admin, I can log into the site
 
     Given I am on the login page
-    When I login with <username> and <password>
+    When I login with <username>
     Then I should see a flash message saying <message>
+    Then I should see the Logo is displayed
 
     Examples:
-      | username | password             | message                        |
-      | tomsmith | SuperSecretPassword! | You logged into a secure area! |
-      | foobar   | barfoo               | Your username is invalid!      |
+      | username                           | message                 |
+      | gap-automation-test@mailinator.com | Signed in successfully. |
